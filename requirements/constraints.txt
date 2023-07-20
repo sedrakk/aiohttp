@@ -24,8 +24,6 @@ brotli==1.0.9
     # via
     #   -r requirements/base.txt
     #   -r requirements/test.txt
-cchardet==2.1.7 ; python_version < "3.10"
-    # via -r requirements/base.txt
 certifi==2021.10.8
     # via requests
 cffi==1.15.0
@@ -91,8 +89,6 @@ idna==3.3
     #   yarl
 imagesize==1.2.0
     # via sphinx
-importlib-metadata==4.12.0
-    # via sphinx
 incremental==21.3.0
     # via towncrier
 iniconfig==1.1.1
@@ -111,6 +107,8 @@ mypy==0.982 ; implementation_name == "cpython"
     # via
     #   -r requirements/lint.txt
     #   -r requirements/test.txt
+mypy-extensions==1.0.0
+    # via mypy
 nodeenv==1.6.0
     # via pre-commit
 packaging==21.2
@@ -215,12 +213,12 @@ toml==0.10.2
     # via
     #   cherry-picker
     #   pre-commit
+    #   pytest
 tomli==1.2.2
     # via
     #   coverage
     #   mypy
     #   pep517
-    #   pytest
     #   slotscheck
     #   towncrier
 towncrier==22.8.0
@@ -243,8 +241,8 @@ uritemplate==4.1.1
     # via gidgethub
 urllib3==1.26.7
     # via requests
-uvloop==0.17.0 ; platform_system != "Windows" and implementation_name == "cpython" and python_version < "3.9"
-    # via -r requirements/base.txt
+uvloop==0.17.0 ; platform_system != "Windows"
+    # via -r requirements/lint.txt
 virtualenv==20.10.0
     # via pre-commit
 wait-for-it==2.2.1
@@ -255,8 +253,6 @@ wheel==0.37.0
     # via pip-tools
 yarl==1.9.2
     # via -r requirements/base.txt
-zipp==3.8.1
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 pip==21.3.1
