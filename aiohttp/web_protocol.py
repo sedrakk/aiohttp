@@ -344,6 +344,7 @@ class RequestHandler(BaseProtocol):
             waiter = self._waiter
             if messages and waiter is not None and not waiter.done():
                 # don't set result twice
+                print(self._force_close, self._close)
                 waiter.set_result(None)
 
             self._upgrade = upgraded
@@ -502,6 +503,7 @@ class RequestHandler(BaseProtocol):
             else:
                 request_handler = self._request_handler
 
+            print(self._force_close, self._close)
             request = self._request_factory(message, payload, self, writer, handler)
             try:
                 # a new task is used for copy context vars (#3406)
